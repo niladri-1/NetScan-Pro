@@ -89,11 +89,16 @@ run_traceroute() {
     traceroute "$target" | tee -a "$LOG_FILE"
 }
 
-# Perform a simple ping test on a given host
-ping_test() {
+# Perform a vulnerability scan on a given host using Nmap scripts
+vulnerability_scan() {
     local target=$1
-    log "${BLUE}[*] Pinging $target...${NC}"
-    ping -c 4 "$target" | tee -a "$LOG_FILE"
+    log "${BLUE}[*] Scanning $target for vulnerabilities...${NC}"
+    sudo nmap -sV --script=vuln "$target" | tee -a "$LOG_FILE"
+}
+
+# Clear the terminal screen
+clear_screen() {
+    clear
 }
 
 # Display an interactive menu for user options
@@ -102,15 +107,14 @@ show_menu() {
     echo -e "1. Scan for live hosts on the network"
     echo -e "2. Perform a port scan on a specific host"
     echo -e "3. Run traceroute to a specific host"
-    echo -e "4. Ping a specific host"
-    echo -e "5. Exit"
-    echo -en "${GREEN}Enter your choice [1-5]: ${NC}"
+    echo -e "4. Find vulnerabilities on a specific host"
+    echo -e "5. Clear the screen"
+    echo -e "6. Exit"
+    echo -en "${GREEN}Enter your choice [1-6]: ${NC}"
 }
 
 # Main execution
-
-# Clear the screen and display the banner and fun message
-clear
+clear_screen
 display_banner
 fun_message
 
@@ -142,16 +146,19 @@ while true; do
             run_traceroute "$target"
             ;;
         4)
-            echo -en "${GREEN}Enter target host IP for ping test: ${NC}"
+            echo -en "${GREEN}Enter target host IP for vulnerability scan: ${NC}"
             read -r target
-            ping_test "$target"
+            vulnerability_scan "$target"
             ;;
         5)
+            clear_screen
+            ;;
+        6)
             log "${YELLOW}Exiting. Have a great day!${NC}"
             exit 0
             ;;
         *)
-            echo -e "${RED}Invalid option. Please select between 1 and 5.${NC}"
+            echo -e "${RED}Invalid option. Please select between 1 and 6.${NC}"
             ;;
     esac
 done
