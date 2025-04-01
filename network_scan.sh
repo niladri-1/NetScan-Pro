@@ -2,7 +2,7 @@
 
 # Check if required commands are installed: nmap
 REQUIRED_COMMANDS=("nmap")
-OPTIONAL_COMMANDS=("figlet" "lolcat" "cowsay")
+OPTIONAL_COMMANDS=("figlet" "lolcat" "toilet" "nmcli" "iwlist" "iwconfig")
 
 for cmd in "${REQUIRED_COMMANDS[@]}"; do
     if ! command -v "$cmd" &> /dev/null; then
@@ -18,97 +18,102 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-LOG_FILE="network_scan_$(date +'%Y%m%d_%H%M%S').log"
+# Create results directory if it doesn't exist
+RESULTS_DIR="results"
+mkdir -p "$RESULTS_DIR"
+
+LOG_FILE="$RESULTS_DIR/network_scan_$(date +'%Y%m%d_%H%M%S').log"
 
 # Function to log output with timestamps
 log() {
     echo -e "$(date +'%Y-%m-%d %H:%M:%S') $1" | tee -a "$LOG_FILE"
 }
 
-# Display a banner using figlet (with optional lolcat)
 display_banner() {
     if command -v figlet &> /dev/null; then
+        terminal_width=$(tput cols)
         banner=$(figlet "NetScan Pro")
-        if command -v lolcat &> /dev/null; then
-            echo "$banner" | lolcat
-        else
-            echo -e "${GREEN}$banner${NC}"
-        fi
+        while IFS= read -r line; do
+            padding=$(( (terminal_width - ${#line}) / 2 ))
+            printf "%*s%s\n" "$padding" "" "$line"
+        done <<< "$banner" | { command -v lolcat &> /dev/null && lolcat || cat; }
     else
-        echo -e "${GREEN}========== NetScan Pro ==========${NC}"
+        echo -e "${GREEN}========== NetScan Pro ========== ${NC}"
     fi
 }
 
-# Fun message using cowsay if available
-fun_message() {
-    if command -v cowsay &> /dev/null; then
-        if command -v lolcat &> /dev/null; then
-            cowsay "Happy Scanning!" | lolcat
-        else
-            cowsay "Happy Scanning!"
-        fi
-    else
-        echo -e "${GREEN}Happy Scanning!${NC}"
-    fi
-}
-
-# Get host IP (first available address)
 get_host_ip() {
     hostname -I | awk '{print $1}'
 }
 
-# Get default gateway from the routing table
 get_default_gateway() {
     ip route | awk '/^default/ {print $3}'
 }
 
-# Determine network in CIDR notation using the IP command
 calculate_network() {
     local host_ip=$1
     ip -o -f inet addr show | awk -v ip="$host_ip" '$0 ~ ip {print $4}'
 }
 
-# Scan the network for live hosts using nmap
 scan_network() {
     local network=$1
     log "${BLUE}[*] Scanning network $network for live hosts...${NC}"
     nmap -sn "$network" | tee -a "$LOG_FILE"
 }
 
-# Perform a port scan (SYN scan with service detection and OS detection) on a given host
 port_scan() {
     local target=$1
     log "${BLUE}[*] Performing port scan on $target...${NC}"
     sudo nmap -sS -sV -O "$target" | tee -a "$LOG_FILE"
 }
 
-# Perform a vulnerability scan on a given host using Nmap scripts
 vulnerability_scan() {
     local target=$1
     log "${BLUE}[*] Scanning $target for vulnerabilities...${NC}"
     sudo nmap -sV --script=vuln "$target" | tee -a "$LOG_FILE"
 }
 
-# Clear the terminal screen
+find_web_servers() {
+    log "${BLUE}[*] Scanning for web servers on the network...${NC}"
+    nmap --open -p 80,443 "$network" | tee -a "$LOG_FILE"
+}
+
+find_wireless_connections() {
+    log "${BLUE}[*] Scanning for available wireless connections...${NC}"
+    if command -v nmcli &> /dev/null; then
+        log "Using nmcli for wireless scan."
+        sudo nmcli dev wifi list | tee -a "$LOG_FILE"
+    elif command -v iwlist &> /dev/null; then
+        interface=$(iwconfig 2>/dev/null | grep 'ESSID' | awk '{print $1}')
+        if [ -n "$interface" ]; then
+            log "Using iwlist on interface $interface"
+            sudo iwlist "$interface" scan | grep -E 'ESSID|Signal' | tee -a "$LOG_FILE"
+        else
+            log "${RED}[!] No wireless interface found. Ensure WiFi is enabled.${NC}"
+        fi
+    else
+        log "${RED}[!] No suitable tool found to scan for wireless networks.${NC}"
+    fi
+}
+
 clear_screen() {
     clear
 }
 
-# Display an interactive menu for user options
 show_menu() {
     echo -e "\n${YELLOW}Select an option:${NC}"
     echo -e "1. Scan for live hosts on the network"
     echo -e "2. Perform a port scan on a specific host"
     echo -e "3. Find vulnerabilities on a specific host"
-    echo -e "4. Clear the screen"
-    echo -e "5. Exit"
-    echo -en "${GREEN}Enter your choice [1-5]: ${NC}"
+    echo -e "4. Find web servers on the network"
+    echo -e "5. Find available wireless connections"
+    echo -e "6. Clear the screen"
+    echo -e "7. Exit"
+    echo -en "${GREEN}Enter your choice [1-7]: ${NC}"
 }
 
-# Main execution
 clear_screen
 display_banner
-fun_message
 
 host_ip=$(get_host_ip)
 gateway=$(get_default_gateway)
@@ -117,9 +122,8 @@ network=$(calculate_network "$host_ip")
 log "${GREEN}Host IP: ${NC}$host_ip"
 log "${GREEN}Default Gateway: ${NC}$gateway"
 log "${GREEN}Network: ${NC}$network"
-log "${GREEN}Scan results will be logged to: ${NC}$LOG_FILE"
+log "${GREEN}Scan results will be stored in: ${NC}$RESULTS_DIR"
 
-# Main interactive loop
 while true; do
     show_menu
     read -r choice
@@ -138,14 +142,20 @@ while true; do
             vulnerability_scan "$target"
             ;;
         4)
-            clear_screen
+            find_web_servers
             ;;
         5)
+            find_wireless_connections
+            ;;
+        6)
+            clear_screen
+            ;;
+        7)
             log "${YELLOW}Exiting. Have a great day!${NC}"
             exit 0
             ;;
         *)
-            echo -e "${RED}Invalid option. Please select between 1 and 5.${NC}"
+            echo -e "${RED}Invalid option. Please select between 1 and 7.${NC}"
             ;;
     esac
 done
