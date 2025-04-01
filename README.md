@@ -36,9 +36,6 @@ This tool relies on the following packages:
 
 Alternatively, you can install the required packages manually:
 ```bash
-sudo apt-get update -y
-```
-```bash
 sudo apt-get install nmap traceroute figlet lolcat cowsay -y
 ```
 
