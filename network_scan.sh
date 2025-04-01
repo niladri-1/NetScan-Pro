@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Check if required commands are installed: nmap, traceroute
-REQUIRED_COMMANDS=("nmap" "traceroute")
+# Check if required commands are installed: nmap
+REQUIRED_COMMANDS=("nmap")
 OPTIONAL_COMMANDS=("figlet" "lolcat" "cowsay")
 
 for cmd in "${REQUIRED_COMMANDS[@]}"; do
@@ -82,13 +82,6 @@ port_scan() {
     sudo nmap -sS -sV -O "$target" | tee -a "$LOG_FILE"
 }
 
-# Run traceroute to a given host
-run_traceroute() {
-    local target=$1
-    log "${BLUE}[*] Running traceroute to $target...${NC}"
-    traceroute "$target" | tee -a "$LOG_FILE"
-}
-
 # Perform a vulnerability scan on a given host using Nmap scripts
 vulnerability_scan() {
     local target=$1
@@ -106,11 +99,10 @@ show_menu() {
     echo -e "\n${YELLOW}Select an option:${NC}"
     echo -e "1. Scan for live hosts on the network"
     echo -e "2. Perform a port scan on a specific host"
-    echo -e "3. Run traceroute to a specific host"
-    echo -e "4. Find vulnerabilities on a specific host"
-    echo -e "5. Clear the screen"
-    echo -e "6. Exit"
-    echo -en "${GREEN}Enter your choice [1-6]: ${NC}"
+    echo -e "3. Find vulnerabilities on a specific host"
+    echo -e "4. Clear the screen"
+    echo -e "5. Exit"
+    echo -en "${GREEN}Enter your choice [1-5]: ${NC}"
 }
 
 # Main execution
@@ -141,24 +133,19 @@ while true; do
             port_scan "$target"
             ;;
         3)
-            echo -en "${GREEN}Enter target host IP for traceroute: ${NC}"
-            read -r target
-            run_traceroute "$target"
-            ;;
-        4)
             echo -en "${GREEN}Enter target host IP for vulnerability scan: ${NC}"
             read -r target
             vulnerability_scan "$target"
             ;;
-        5)
+        4)
             clear_screen
             ;;
-        6)
+        5)
             log "${YELLOW}Exiting. Have a great day!${NC}"
             exit 0
             ;;
         *)
-            echo -e "${RED}Invalid option. Please select between 1 and 6.${NC}"
+            echo -e "${RED}Invalid option. Please select between 1 and 5.${NC}"
             ;;
     esac
 done
