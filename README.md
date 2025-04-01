@@ -36,10 +36,10 @@ This tool relies on the following packages:
 
 Alternatively, you can install the required packages manually:
 ```bash
-sudo apt-get update
+sudo apt-get update -y
 ```
 ```bash
-sudo apt-get install nmap traceroute figlet lolcat cowsay
+sudo apt-get install nmap traceroute figlet lolcat cowsay -y
 ```
 
 ## Usage
@@ -53,7 +53,7 @@ sudo apt-get install nmap traceroute figlet lolcat cowsay
 2. **Run the Script:**
    Execute the script:
    ```bash
-   ./network_scan.sh
+   sudo ./network_scan.sh
    ```
 
 3. **Follow the Interactive Menu:**
