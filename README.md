@@ -4,7 +4,7 @@ NetScan Pro is an enhanced network scanning tool written in **Bash** that provid
 
 ## Preview
 
-<img src="Preview.png" alt="NetScan Pro Preview" width="700">
+<img src="https://github.com/niladri-1/NetScan-Pro/blob/main/assets/Preview.png" alt="NetScan Pro Preview" width="700">
 
 > **Screenshot:** Here you can see NetScan Pro’s banner, network information display, and interactive menu.
 
