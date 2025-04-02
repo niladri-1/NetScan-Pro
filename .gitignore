@@ -1,0 +1,21 @@
+# Ignore log files and directories
+*.log
+logs/
+*.tmp
+
+# Ignore backup and temporary files created by editors
+*~
+*.bak
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore any temporary directories or build output
+tmp/
+install_output/
+
+# Ignore user-specific files
+*.user
