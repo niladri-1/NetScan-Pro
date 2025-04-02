@@ -24,6 +24,9 @@ NC='\033[0m' # No Color
 RESULTS_DIR="results"
 mkdir -p "$RESULTS_DIR"
 
+WEB_RESULT="Web Pages"
+mkdir -p "$WEB_RESULT"
+
 LOG_FILE="$RESULTS_DIR/network_scan_$(date +'%Y%m%d_%H%M%S').log"
 
 # Function to log output with timestamps
@@ -128,7 +131,7 @@ network_device_discovery() {
 }
 
 generate_report() {
-    local report_file="$RESULTS_DIR/network_report_$(date +'%Y%m%d_%H%M%S').html"
+    local report_file="$WEB_RESULT/network_report_$(date +'%Y%m%d_%H%M%S').html"
     log "${BLUE}[*] Generating HTML report from scan data...${NC}"
 
     echo "<!DOCTYPE html>
