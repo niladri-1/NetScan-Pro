@@ -1,71 +1,59 @@
 # NetScan Pro
 
-NetScan Pro is an enhanced network scanning tool written in Bash that provides an interactive menu to perform a variety of network diagnostics. With visually attractive output and fun features like ASCII banners and cowsay messages, this tool is both functional and engaging.
+NetScan Pro is an enhanced network scanning tool written in **Bash** that provides an interactive menu for various network diagnostics. It offers visually appealing output—featuring ASCII banners and fun cowsay messages—making it both practical and engaging.
+
+## Preview
+
+<img src="Preview.png" alt="NetScan Pro Preview" width="700">
+
+> **Screenshot:** Here you can see NetScan Pro’s banner, network information display, and interactive menu.
 
 ## Features
 
-- **Display Basic Network Info:**
-  Automatically shows your host IP, default gateway, and network (CIDR notation).
+- **Display Basic Network Info**
+  Automatically shows your host IP, default gateway, and network (in CIDR notation).
 
-- **Interactive Scanning Options:**
-  - **Live Host Scan:** Detect active hosts on your local network using `nmap`.
-  - **Port Scan:** Perform a detailed port scan on any host (includes service and OS detection; requires sudo).
-  - **Traceroute:** Display the network path to a specific host.
-  - **Ping Test:** Conduct a simple ping test to check connectivity.
+- **Interactive Scanning Options**
+  1. **Live Host Scan:** Detect active hosts on your local network using `nmap`.
+  2. **Port Scan:** Perform a detailed port scan (includes service and OS detection; requires sudo).
+  3. **Vulnerability Scan (Placeholder):** *(If you’ve integrated any vulnerability scanning, highlight it here.)*
+  4. **Wireless Network Scan (Placeholder):** *(If added, mention it here.)*
+  5. **Clear the Screen**
+  6. **Exit**
 
-- **Visual Enhancements:**
-  - **ASCII Banner:** Uses `figlet` (with optional `lolcat` for color) for an eye-catching header.
-  - **Fun Messages:** Displays a fun greeting using `cowsay`.
-
-- **Logging:**
-  All outputs are timestamped and saved to a log file for later review.
+- **Logging**
+  All outputs are timestamped and saved to a log file for easy review.
 
 ## Installation
 
-### Dependencies
+We provide an **install.sh** script that automates the setup:
 
-This tool relies on the following packages:
-
-- `nmap`
-- `traceroute`
-- `figlet`
-- `lolcat`
-- `cowsay`
-
-### Installation
-
-Alternatively, you can install the required packages manually:
-```bash
-sudo apt-get install nmap traceroute figlet lolcat cowsay -y
-```
-
-## Usage
-
-1. **Make the Script Executable:**
-   Ensure the script file `network_scan.sh` has execute permissions:
+1. **Clone the Repository:**
    ```bash
-   chmod +x network_scan.sh
+   git clone https://github.com/niladri-1/NetScan-Pro.git
+   cd NetScan-Pro
    ```
-
-2. **Run the Script:**
-   Execute the script:
+2. **Run the Installation Script:**
    ```bash
-   sudo ./network_scan.sh
+   chmod +x install.sh && ./install.sh
    ```
+   This script will:
+   - Update your package lists.
+   - Install required dependencies (`nmap`, `traceroute`, `figlet`, `lolcat`, `cowsay`).
+   - Set execute permissions for the main script.
+   - Automatically launch **NetScan Pro**.
 
-3. **Follow the Interactive Menu:**
-   - **Option 1:** Scan for live hosts on your network.
-   - **Option 2:** Perform a detailed port scan on a specific host.
-   - **Option 3:** Run traceroute to a specific host.
-   - **Option 4:** Ping a specific host.
-   - **Option 5:** Exit the tool.
+Select an option and follow the prompts. Results are saved in a timestamped log file for future reference.
 
-   All scan results and outputs will be logged to a file named similar to `network_scan_YYYYMMDD_HHMMSS.log`.
+## Customization and Contributions
 
-## Customization
-
-Feel free to modify and extend the script to meet your specific needs. Contributions and suggestions are welcome!
+Feel free to modify and extend NetScan Pro to suit your needs. Contributions, suggestions, and improvements are always welcome. If you encounter any issues or have questions, please [open an issue](https://github.com/niladri-1/NetScan-Pro/issues) on GitHub.
 
 ## License
 
-This tool is provided "as-is" without any warranty. Use it responsibly and at your own risk.
+This project is provided **"as-is"** without any warranty. Use it responsibly and at your own risk.
+
+---
+
+**Happy Scanning!**
+Stay secure, stay informed.
