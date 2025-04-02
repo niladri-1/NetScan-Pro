@@ -10,23 +10,34 @@ NetScan Pro is an enhanced network scanning tool written in **Bash** that provid
 
 > **Screenshot:** Here you can see NetScan Pro’s banner, network information display, and interactive menu.
 
-## Features
+## <div align="center">Features</div>
 
-- **Display Basic Network Info**
-  Automatically shows your host IP, default gateway, and network (in CIDR notation).
+### 🔍 Network Discovery
+- **Scan for live hosts on the network**
+- **Perform a detailed network device discovery**
 
-- **Interactive Scanning Options**
-  1. **Live Host Scan:** Detect active hosts on your local network using `nmap`.
-  2. **Port Scan:** Perform a detailed port scan (includes service and OS detection; requires sudo).
-  3. **Vulnerability Scan (Placeholder):** *(If you’ve integrated any vulnerability scanning, highlight it here.)*
-  4. **Wireless Network Scan (Placeholder):** *(If added, mention it here.)*
-  5. **Clear the Screen**
-  6. **Exit**
+### 🔌 Port Scanning
+- **Quick port scan** on a specific host
+- **Standard port scan** on a specific host
+- **Full port scan** on a specific host
 
-- **Logging**
-  All outputs are timestamped and saved to a log file for easy review.
+### 🌐 Service Discovery
+- **Find web servers** on the network
+- **Find database servers** on the network
+- **Find vulnerabilities** on a specific host
 
-## Installation
+### 📡 Wireless
+- **Find available wireless connections**
+
+### 🛠️ Utilities
+- **Generate an HTML report** from scan data
+- **Clear the screen**
+- **Exit the application**
+
+### 📜 Logging
+- **Timestamped logs** saved for easy review.
+
+## <div align="center">Installation</div>
 
 We provide an **install.sh** script that automates the setup:
 
@@ -53,15 +64,17 @@ We provide an **install.sh** script that automates the setup:
 
 Select an option and follow the prompts. Results are saved in a timestamped log file for future reference.
 
-## Customization and Contributions
+## <div align="center">Customization and Contributions</div>
 
 Feel free to modify and extend NetScan Pro to suit your needs. Contributions, suggestions, and improvements are always welcome. If you encounter any issues or have questions, please [open an issue](https://github.com/niladri-1/NetScan-Pro/issues) on GitHub.
 
-## License
+## <div align="center">License</div>
 
 This project is provided **"as-is"** without any warranty. Use it responsibly and at your own risk.
 
 ---
+<div align="center">
 
 **Happy Scanning!**
 Stay secure, stay informed.
+</div>
