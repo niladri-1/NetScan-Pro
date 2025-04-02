@@ -1,80 +1,105 @@
-# <div align="center">NetScan Pro</div>
-
-NetScan Pro is an enhanced network scanning tool written in **Bash** that provides an interactive menu for various network diagnostics. It offers visually appealing output—featuring ASCII banners and fun cowsay messages—making it both practical and engaging.
-
-## <div align="center">Preview</div>
+<div align="center" style="color: yellow;">
+  <h1>🚀 NetScan Pro - Advanced Network Scanner</h1>
+</div>
 
 <p align="center">
-  <img src="https://github.com/niladri-1/NetScan-Pro/blob/main/assets/Preview.png" alt="NetScan Pro Preview" width="700">
+  <!-- Technology and tool badges -->
+  <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="Bash">
+  <img src="https://img.shields.io/badge/Linux-000000?style=for-the-badge&logo=linux&logoColor=white" alt="Linux">
+  <img src="https://img.shields.io/badge/Nmap-264DE4?style=for-the-badge&logo=nmap&logoColor=white" alt="Nmap">
+  <img src="https://img.shields.io/badge/Traceroute-007ACC?style=for-the-badge" alt="Traceroute">
+  <img src="https://img.shields.io/badge/Security-EA4C89?style=for-the-badge&logo=shield-check" alt="Security">
 </p>
 
-> **Screenshot:** Here you can see NetScan Pro’s banner, network information display, and interactive menu.
 
-## <div align="center">Features</div>
+<div align="center" style="color: yellow;">
+  <h2>Overview</h2>
+</div>
 
-### 🔍 Network Discovery
-- **Scan for live hosts on the network**
-- **Perform a detailed network device discovery**
+**NetScan Pro** is a robust **Bash-based network security and diagnostic tool** crafted for both beginners and experts. It delivers an interactive terminal experience enhanced with vibrant ASCII banners, color-coded outputs, and engaging visuals—making network scanning, service discovery, and vulnerability assessment both practical and enjoyable.
 
-### 🔌 Port Scanning
-- **Quick port scan** on a specific host
-- **Standard port scan** on a specific host
-- **Full port scan** on a specific host
+<hr>
 
-### 🌐 Service Discovery
-- **Find web servers** on the network
-- **Find database servers** on the network
-- **Find vulnerabilities** on a specific host
+<div align="center" style="color: yellow;">
+  <h2>Key Features</h2>
+</div>
 
-### 📡 Wireless
-- **Find available wireless connections**
+- **Network Discovery:** Quickly identify live hosts and connected devices.
+- **Port Scanning:** Execute quick, standard, or comprehensive scans on selected hosts.
+- **Service Enumeration:** Detect running services, including web, database, and mail servers.
+- **Security Analysis:** Uncover potential vulnerabilities on target systems.
+- **Wireless Scanning:** Identify and assess available Wi-Fi networks.
+- **Automated Reporting:** Save timestamped logs for detailed auditing and tracking.
+- **User-Friendly Interface:** Navigate easily through interactive menus enhanced by ASCII art and dynamic outputs.
 
-### 🛠️ Utilities
-- **Generate an HTML report** from scan data
-- **Clear the screen**
-- **Exit the application**
+<hr>
 
-### 📜 Logging
-- **Timestamped logs** saved for easy review.
+<div align="center" style="color: yellow;">
+  <h2>Installation & Setup</h2>
+</div>
 
-## <div align="center">Installation</div>
-
-We provide an **install.sh** script that automates the setup:
+Get started with NetScan Pro effortlessly using our **install.sh** script:
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/niladri-1/NetScan-Pro.git
+   git clone https://github.com/niladri-1/NetScan-Pro.git && cd NetScan-Pro
    ```
-   ```bash
-   cd NetScan-Pro
-   ```
-2. **Run the Installation Script:**
+2. **Run the Installer:**
    ```bash
    chmod +x install.sh && ./install.sh
    ```
-3. **Run next time :**
+3. **Launch NetScan Pro:**
    ```bash
    sudo ./network_scan.sh
    ```
-   This script will:
-   - Update your package lists.
-   - Install required dependencies (`nmap`, `traceroute`, `figlet`, `lolcat`, `cowsay`).
-   - Set execute permissions for the main script.
-   - Automatically launch **NetScan Pro**.
 
-Select an option and follow the prompts. Results are saved in a timestamped log file for future reference.
+The installation script handles dependency setup (including `nmap`, `traceroute`, `figlet`, and `lolcat`), permissions, and initial configuration.
 
-## <div align="center">Customization and Contributions</div>
+<hr>
 
-Feel free to modify and extend NetScan Pro to suit your needs. Contributions, suggestions, and improvements are always welcome. If you encounter any issues or have questions, please [open an issue](https://github.com/niladri-1/NetScan-Pro/issues) on GitHub.
+<div align="center" style="color: yellow;">
+  <h2>Live Preview</h2>
+</div>
 
-## <div align="center">License</div>
+<p align="center">
+  <img src="https://github.com/niladri-1/NetScan-Pro/blob/main/assets/Preview.png" alt="NetScan Pro Preview" width="500">
+</p>
 
-This project is provided **"as-is"** without any warranty. Use it responsibly and at your own risk.
+> **Screenshot:** Visualize the interactive menu and detailed scanning outputs in action.
 
----
+<hr>
+
+<div align="center" style="color: yellow;">
+  <h2>How It Works</h2>
+</div>
+
+NetScan Pro leverages an intuitive **menu-based system**:
+- **Select a Scanning Mode:** Choose from network discovery, port scanning, service enumeration, or wireless scanning.
+- **Input Target Information:** Enter the IP address or network range for scanning.
+- **Review Results:** Automatically generated, timestamped logs and detailed reports assist in quick analysis and long-term tracking.
+
+<hr>
+
+<div align="center" style="color: yellow;">
+  <h2>Contributing & Support</h2>
+</div>
+
+We welcome your contributions and feedback! Whether you’re reporting a bug or suggesting new features, your input helps shape the future of NetScan Pro.
+
+- **Raise an Issue:** [Report Bugs & Feature Requests](https://github.com/niladri-1/NetScan-Pro/issues)
+- **Fork & Contribute:** Submit pull requests to enhance and expand functionality.
+- **Feedback:** Share your ideas for improvements.
+
+<hr>
+
+<div align="center" style="color: yellow;">
+  <h2>License & Disclaimer</h2>
+</div>
+
+This project is distributed **"as-is"** without any warranties. Use responsibly and adhere to ethical guidelines and local laws. **Unauthorized scanning can be illegal—always secure proper authorization before testing any network.**
+
+<hr>
+
 <div align="center">
-
-**Happy Scanning!**
-Stay secure, stay informed.
+  <h3 style="color: yellow;">Stay Secure. Stay Informed. Happy Scanning! 🚀</h3>
 </div>
