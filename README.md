@@ -1,10 +1,12 @@
-# NetScan Pro
+# <div align="center">NetScan Pro</div>
 
 NetScan Pro is an enhanced network scanning tool written in **Bash** that provides an interactive menu for various network diagnostics. It offers visually appealing output—featuring ASCII banners and fun cowsay messages—making it both practical and engaging.
 
-## Preview
+## <div align="center">Preview</div>
 
-<img src="https://github.com/niladri-1/NetScan-Pro/blob/main/assets/Preview.png" alt="NetScan Pro Preview" width="700">
+<p align="center">
+  <img src="https://github.com/niladri-1/NetScan-Pro/blob/main/assets/Preview.png" alt="NetScan Pro Preview" width="700">
+</p>
 
 > **Screenshot:** Here you can see NetScan Pro’s banner, network information display, and interactive menu.
 
@@ -31,11 +33,17 @@ We provide an **install.sh** script that automates the setup:
 1. **Clone the Repository:**
    ```bash
    git clone https://github.com/niladri-1/NetScan-Pro.git
+   ```
+   ```bash
    cd NetScan-Pro
    ```
 2. **Run the Installation Script:**
    ```bash
    chmod +x install.sh && ./install.sh
+   ```
+3. **Run next time :**
+   ```bash
+   sudo ./network_scan.sh
    ```
    This script will:
    - Update your package lists.
