@@ -2,10 +2,6 @@
   <h1>🚀 NetScan Pro - Advanced Network Scanner</h1>
 </div>
 
-<div align="center" style="color: yellow;">
-  <h2>Overview</h2>
-</div>
-
 **NetScan Pro** is a robust **Bash-based network security and diagnostic tool** crafted for both beginners and experts. It delivers an interactive terminal experience enhanced with vibrant ASCII banners, color-coded outputs, and engaging visuals—making network scanning, service discovery, and vulnerability assessment both practical and enjoyable.
 
 <p align="center">
