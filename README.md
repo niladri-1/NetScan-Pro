@@ -15,39 +15,14 @@
 </div>
 
 
-## <div align="center">✨ Features
+### <div align="center">📌 Common Use Cases</div>
 
-- **Network Discovery**
-  - Live host detection
-  - Comprehensive device enumeration
-  - Gateway and subnet mapping
+- **Quick Network Audit**: Option 1 (Scan for live hosts) → Option 6 (Find web servers)
+- **Detailed Host Analysis**: Option 4 (Standard port scan) → Option 8 (Vulnerability scan)
+- **Complete Security Assessment**: Options 1 → 2 → 5 → 8 → 10 (Generate report)
 
-- **Port Scanning**
-  - Quick (top 100 ports)
-  - Standard (common ports with service detection)
-  - Full (all 65535 ports with detailed OS and service detection)
 
-- **Service Detection**
-  - Web server discovery (HTTP/HTTPS)
-  - Database server identification (MySQL, PostgreSQL, MongoDB, etc.)
-  - Service version fingerprinting
-
-- **Security Assessment**
-  - Vulnerability scanning with CVE identification
-  - Service weakness detection
-  - Security posture evaluation
-
-- **Wireless Network Analysis**
-  - Wi-Fi network discovery
-  - Signal strength measurement
-  - Channel distribution analysis
-
-- **Reporting**
-  - Interactive HTML reports with filtering capabilities
-  - Comprehensive logs with timestamps
-  - Exportable results for documentation
-
-  ## <div align="center">🚀 Installation
+## <div align="center">🚀 Installation
 
 ### <div align="center">1. Quick Setup
 
@@ -84,16 +59,43 @@ sudo ./network_scan.sh
 ```
 
 
-### <div align="center">Common Use Cases</div>
+## <div align="center">✨ Features
 
-- **Quick Network Audit**: Option 1 (Scan for live hosts) → Option 6 (Find web servers)
-- **Detailed Host Analysis**: Option 4 (Standard port scan) → Option 8 (Vulnerability scan)
-- **Complete Security Assessment**: Options 1 → 2 → 5 → 8 → 10 (Generate report)
+- **Network Discovery**
+  - Live host detection
+  - Comprehensive device enumeration
+  - Gateway and subnet mapping
+
+- **Port Scanning**
+  - Quick (top 100 ports)
+  - Standard (common ports with service detection)
+  - Full (all 65535 ports with detailed OS and service detection)
+
+- **Service Detection**
+  - Web server discovery (HTTP/HTTPS)
+  - Database server identification (MySQL, PostgreSQL, MongoDB, etc.)
+  - Service version fingerprinting
+
+- **Security Assessment**
+  - Vulnerability scanning with CVE identification
+  - Service weakness detection
+  - Security posture evaluation
+
+- **Wireless Network Analysis**
+  - Wi-Fi network discovery
+  - Signal strength measurement
+  - Channel distribution analysis
+
+- **Reporting**
+  - Interactive HTML reports with filtering capabilities
+  - Comprehensive logs with timestamps
+  - Exportable results for documentation
+
 
 ## <div align="center">📁 Project Structure</div>
 
 ```
-netscan-pro/
+NetScan-Pro/
 ├── install.sh              # Dependency installer
 ├── network_scan.sh         # Main scanner script
 ├── README.md               # This documentation
@@ -128,16 +130,14 @@ Contributions to NetScan Pro are welcome! If you'd like to help improve this too
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## <div align="center">📜 License</div>
-
-This project is distributed under the MIT License. See the LICENSE file for details.
 
 ## <div align="center">📞 Support</div>
+<div align="center">
 
-For issues, questions, or feedback:
-- Contact: [Linkedin](https://linkedin.com/in/niladri1)
-- Open an [Portfolio](https://niladri1.vercel.app)
-- Open an [Issue Pole](https://github.com/niladri-1/NetScan-Pro/issues)
+**Contact [Linkedin](https://linkedin.com/in/niladri1) ,
+Visit My [Portfolio](https://niladri1.vercel.app) or
+Open an [Issue Pole](https://github.com/niladri-1/NetScan-Pro/issues)**
+</div>
 
 ---
 
