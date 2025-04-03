@@ -10,7 +10,7 @@
 **NetScan Pro** is a powerful Bash-based network reconnaissance and security assessment toolkit designed for **Network Administrators, Security Professionals, and IT Enthusiasts**. This interactive command-line tool provides comprehensive network scanning capabilities with a **user-friendly interface** enhanced by color-coded outputs and visual elements.
 
 <div align="center">
-  <img src="assets/preview.png" alt="NetScan Pro Preview" width="700">
+  <img src="https://github.com/niladri-1/NetScan-Pro/blob/main/assets/Preview.png" alt="NetScan Pro Preview" width="700">
   <p><i>NetScan Pro interface with colorful output and interactive menu</i></p>
 </div>
 
