@@ -14,7 +14,40 @@
   <p><i>NetScan Pro interface with colorful output and interactive menu</i></p>
 </div>
 
-## <div align="center">🚀 Installation
+
+## <div align="center">✨ Features
+
+- **Network Discovery**
+  - Live host detection
+  - Comprehensive device enumeration
+  - Gateway and subnet mapping
+
+- **Port Scanning**
+  - Quick (top 100 ports)
+  - Standard (common ports with service detection)
+  - Full (all 65535 ports with detailed OS and service detection)
+
+- **Service Detection**
+  - Web server discovery (HTTP/HTTPS)
+  - Database server identification (MySQL, PostgreSQL, MongoDB, etc.)
+  - Service version fingerprinting
+
+- **Security Assessment**
+  - Vulnerability scanning with CVE identification
+  - Service weakness detection
+  - Security posture evaluation
+
+- **Wireless Network Analysis**
+  - Wi-Fi network discovery
+  - Signal strength measurement
+  - Channel distribution analysis
+
+- **Reporting**
+  - Interactive HTML reports with filtering capabilities
+  - Comprehensive logs with timestamps
+  - Exportable results for documentation
+
+  ## <div align="center">🚀 Installation
 
 ### <div align="center">1. Quick Setup
 
@@ -50,37 +83,6 @@ chmod +x network_scan.sh
 sudo ./network_scan.sh
 ```
 
-## <div align="center">✨ Features
-
-- **Network Discovery**
-  - Live host detection
-  - Comprehensive device enumeration
-  - Gateway and subnet mapping
-
-- **Port Scanning**
-  - Quick (top 100 ports)
-  - Standard (common ports with service detection)
-  - Full (all 65535 ports with detailed OS and service detection)
-
-- **Service Detection**
-  - Web server discovery (HTTP/HTTPS)
-  - Database server identification (MySQL, PostgreSQL, MongoDB, etc.)
-  - Service version fingerprinting
-
-- **Security Assessment**
-  - Vulnerability scanning with CVE identification
-  - Service weakness detection
-  - Security posture evaluation
-
-- **Wireless Network Analysis**
-  - Wi-Fi network discovery
-  - Signal strength measurement
-  - Channel distribution analysis
-
-- **Reporting**
-  - Interactive HTML reports with filtering capabilities
-  - Comprehensive logs with timestamps
-  - Exportable results for documentation
 
 ### <div align="center">Common Use Cases</div>
 
